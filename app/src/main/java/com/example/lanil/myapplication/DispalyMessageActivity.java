@@ -26,8 +26,23 @@ public class DispalyMessageActivity extends AppCompatActivity {
         textViewMessageView.setText(message);
     }
 
+    /**
+     * Start a basic Android service
+     * @param view
+     */
     public void initStartService(View view){
         Intent intent = new Intent(this, MyService.class);
         startService(intent);
+    }
+
+    /**
+     * Send a signal to a simple Broadcast Receiver
+     * @param view
+     */
+    public void sendMessage(View view){
+        Intent intent = new Intent();
+        intent.setAction("com.example.lanil.myapplication");
+        sendBroadcast(intent);
+
     }
 }
