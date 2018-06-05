@@ -1,6 +1,7 @@
 package com.example.lanil.myapplication;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -40,6 +41,11 @@ public class MainActivity extends AppCompatActivity {
 
         String message = editTextMessage.getText().toString();
         intent.putExtra("EXTRA_MESSAGE", message);
+
+        // SP
+        SharedPreferences sharedPreferences = getSharedPreferences("simple-store", MODE_PRIVATE);
+        sharedPreferences.edit().putString("key", "value").apply();
+        // SP COde end
 
         startActivity(intent);
     }

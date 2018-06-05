@@ -1,6 +1,7 @@
 package com.example.lanil.myapplication;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,7 +24,13 @@ public class DispalyMessageActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String message = intent.getStringExtra("EXTRA_MESSAGE");
 
-        textViewMessageView.setText(message);
+        // SP
+        SharedPreferences sharedPreferences = getSharedPreferences("simple-store", MODE_PRIVATE);
+        String value = sharedPreferences.getString("key", "default");
+
+        // SP END
+
+        textViewMessageView.setText("Intent: " + message + " SP: " + value);
     }
 
     /**
