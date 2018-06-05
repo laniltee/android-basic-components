@@ -45,4 +45,13 @@ public class DispalyMessageActivity extends AppCompatActivity {
         sendBroadcast(intent);
 
     }
+
+    /**
+     *
+     * @param view
+     */
+    public void openLayoutActivity(View view){
+        Intent intent = new Intent(this, LayoutActivity.class);
+        startActivity(intent);
+    }
 }

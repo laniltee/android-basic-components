@@ -26,11 +26,13 @@
         <receiver
             android:name=".MyReceiver"
             android:enabled="true"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
-                <action android:name="com.example.lanil.myapplication"/>
+                <action android:name="com.example.lanil.myapplication" />
             </intent-filter>
         </receiver>
+
+        <activity android:name=".LayoutActivity"></activity>
     </application>
 
 </manifest>
